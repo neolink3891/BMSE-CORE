@@ -1,0 +1,39 @@
+.row {
+    display: table;
+    height: 100px;
+    width: auto;
+}
+.term {
+    display: table-row;
+    height: 100px;
+    width: 100%;
+
+}
+.tc_middle {
+    display: table-cell;
+    vertical-align: middle;
+    font-weight: bold;
+}
+.tc_top {
+    display: table-cell;
+    width: 100%;
+    height: 49px;
+    vertical-align: bottom;
+    text-align: center;
+}
+.tc_bottom {
+    display: table-cell;
+    vertical-align: top;
+    height: 49px;
+    width: 100%;
+    justify-content: center;
+}
+.middle_line {
+    height: 2px;
+    background-color: black;
+    width: 100%;
+}
+.fraction {
+    height: 100%;
+    font-weight: bold;
+}
