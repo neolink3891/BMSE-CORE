@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Testing BMSE Core Class</title>
+        <link rel="stylesheet" href="core/main.css">
+    </head>
+    <body>
+        <div><b>Testing BMES Render Engine for Maths Expressions - version 1.0 - Nov/2022</b></div>
+        <div>Work in Progress...</div>
+        <br />
+        <div>This Engine will be used by Beatriz Math Equations Studio for displaying stylished text when solving math excersises in a comprehensive way.</div>
+        <br />
+        <div>EXAMPLE (View page's source code to modify Math Terms.</div>
+        <hr />
+        <div>Using Objets: Term.js and Display.js</div>
+        <div id="display"></div>
+
+        <script src="core.js"></script>
+        <script src="core/Term.js"></script>
+        <script src="core/Display.js"></script>
+
+        <script type="text/javascript">
+            var d = new Display();  //Ecuation Display
+            var t1 = new Term();    //First Term
+            var t2 = new Term();    //Second Term
+            var t3 = new Term();    //Third Term
+
+            t1.initAsInteger(9, false, "x", 1);
+            t2.initAsFraction(8, true, 7, true, "y", 2);
+            t3.initAsMix(2, 3, true, 4, true, "", 1);
+
+            d.startLine();
+            d.addTermToLeft(t1.renderAsDefault());
+            d.addTermToLeft(t2.renderAsDefault());
+            d.addTermToRight(t3.renderAsDefault());
+            d.endLine();
+
+            d.displayTo('display');
+        </script>
+    </body>
+</html>
