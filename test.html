@@ -13,16 +13,28 @@
         <hr />
         <div>Using Objets: Term.js and Display.js</div>
         <div id="display"></div>
+        <hr />
+        <div>Testing Primes.js</div>
+        <input id="testnum" type="text" value="" placeholder="TYPE A NUMBER" />
+        <input type="button" value="FIND IF IT IS A PRIME" onclick="testPrime();" />
+        <div>Finding if any number is Prime</div>
+        <div id="primes"></div>
+        <hr />
+        <div>Testing Primes.findMCM(numbers)</div>
+        <input type="button" value="FIND IF IT IS A PRIME" onclick="testFindMCM();" />
+        <div id="mcm"></div>
 
         <script src="core.js"></script>
         <script src="core/Term.js"></script>
         <script src="core/Display.js"></script>
+        <script src="core/Primes.js"></script>
 
         <script type="text/javascript">
             var d = new Display();  //Ecuation Display
             var t1 = new Term();    //First Term
             var t2 = new Term();    //Second Term
             var t3 = new Term();    //Third Term
+            var p = new Primes();
 
             t1.initAsInteger(9, false, "x", 1);
             t2.initAsFraction(8, true, 7, true, "y", 2);
@@ -35,6 +47,17 @@
             d.endLine();
 
             d.displayTo('display');
+            
+            function testPrime() {
+                let tn = parseInt(document.getElementById('testnum').value);
+                let resp = p.isItPrime(tn);
+                document.getElementById('primes').innerHTML = p.message;
+            }
+            function testFindMCM() {
+                let nums = [15,12,29];
+                p.findMCM(nums);
+                document.getElementById('mcm').innerHTML = p.message;
+            }
         </script>
     </body>
 </html>
